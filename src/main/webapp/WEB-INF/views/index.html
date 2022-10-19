@@ -5,9 +5,20 @@
     <title>Title</title>
 </head>
 <body>
-<table>
-    <tr th:each="product : ${listProduct}">
-
+<h1>Product</h1>
+<a href="/create">Create</a>
+<table border="1">
+<!--    <tr th:each="product : ${productList}">-->
+<!--        <td th:text="${product.id}"></td>-->
+<!--        <td th:text="${product.name}"></td>-->
+<!--        <td th:text="${product.price}"></td>-->
+<!--        <td th:text="${product.manufacturer}"></td>-->
+<!--    </tr>-->
+    <tr th:each="product : ${productList}" th:object="${product}">
+        <td th:text="*{id}"></td>
+        <td th:text="*{name}"></td>
+        <td th:text="*{price}"></td>
+        <td th:text="*{manufacturer}"></td>
 
     </tr>
 </table>

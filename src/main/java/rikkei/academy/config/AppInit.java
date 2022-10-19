@@ -1,5 +1,6 @@
-package config;
+package rikkei.academy.config;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
+import rikkei.academy.config.AppConfig;
 
 
 public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer{

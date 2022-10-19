@@ -1,20 +1,21 @@
-package model;
+package rikkei.academy.model;
 
 public class Product {
     private int id;
     private String name;
-    private double price;
-    private String description;
+    private float price;
+    private String manufacturer;
 
     public Product() {
     }
 
-    public Product(int id, String name, double price, String description) {
+    public Product(int id, String name, float price, String manufacturer) {
         this.id = id;
         this.name = name;
         this.price = price;
-        this.description = description;
+        this.manufacturer = manufacturer;
     }
+
 
     public int getId() {
         return id;
@@ -32,19 +33,19 @@ public class Product {
         this.name = name;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 }

@@ -1,6 +1,6 @@
-package service;
+package rikkei.academy.service;
 
-import model.Product;
+import rikkei.academy.model.Product;
 
 import java.util.List;
 
@@ -13,6 +13,6 @@ public interface IProductService {
 
     void remove(int id);
 
-    void update(int id, Product product);
+    void update(Product product);
 
 }

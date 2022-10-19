@@ -1,4 +1,4 @@
-package config;
+package rikkei.academy.config;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanInitializationException;
@@ -13,11 +13,13 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.templatemode.TemplateMode;
+import rikkei.academy.service.IProductService;
+import rikkei.academy.service.ProductServiceIMPL;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("config")
-@ComponentScan("service")
+@ComponentScan("rikkei.academy.controller")
+@ComponentScan("rikkei.academy.service")
 
 public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
     private ApplicationContext applicationContext;
@@ -36,5 +38,9 @@ public class AppConfig implements WebMvcConfigurer, ApplicationContextAware {
         templateResolver.setTemplateMode(TemplateMode.HTML);
         templateResolver.setCharacterEncoding("UTF-8");
         return templateResolver;
+    }
+    @Bean
+    public IProductService getProductService() {
+        return new ProductServiceIMPL();
     }
 }
